@@ -55,6 +55,18 @@ table {
     font-size: 16px;
 }
 
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('https://images.unsplash.com/photo-1630443876697-e0d2faac7b51?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
 /* Header and nav styling */
 header {
     position: fixed;
@@ -63,12 +75,13 @@ header {
     flex-direction: column;
     align-items: center;
     width: 100vw;
-    background-color: rgb(0, 0, 53);
+    background-color: rgb(0, 0, 0);
 }
 
 header #logo {
     font-family: 'Ms Madi', fantasy;
-    font-size: 2.5em;
+    font-style: italic;
+    font-size: 3em;
     margin: 20px;
     color: whitesmoke;
 }
@@ -103,8 +116,35 @@ nav .nav-link.active:hover {
 nav .nav-link:hover:after {
     transform: scaleX(1)
 }
-
 nav .nav-link.active:after {
     border-bottom: solid 1px whitesmoke;
     transform: scaleX(1);
+}
+
+/* General content style */
+.content {
+    padding: 60px 30px;
+    border-radius: 50px 15px;
+    width: 70vw;
+    background-color: rgba(0,0,0,0.7);
+}
+
+/* Home content style */
+.content.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content.home h2 {
+    font-size: 1.3em;
+    font-family: 'Ms Madi', fantasy;
+    font-style: italic;
+    margin-bottom: 40px;;
+    color: white;
+    font-size: 2.2em;
+}
+
+.content.home p {
+    color: white;
 }

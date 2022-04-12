@@ -67,7 +67,7 @@ header {
 }
 
 header #logo {
-    font-family: 'Ms Madi', cursive;
+    font-family: 'Ms Madi', fantasy;
     font-size: 2.5em;
     margin: 20px;
     color: whitesmoke;
@@ -94,6 +94,17 @@ nav .nav-link:after {
     transform: scaleX(0);
     transition: transform 250ms ease-in-out;
 }
+nav .nav-link:hover {
+    transform: translateY(-10%);
+}
+nav .nav-link.active:hover {
+    transform: translateY(0);
+}
 nav .nav-link:hover:after {
     transform: scaleX(1)
+}
+
+nav .nav-link.active:after {
+    border-bottom: solid 1px whitesmoke;
+    transform: scaleX(1);
 }

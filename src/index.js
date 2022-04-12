@@ -6,7 +6,8 @@ const createHeader = () => {
     const header = document.createElement('header')
 
     const logo = document.createElement('h1')
-    logo.innerText = 'Thaiaiai'
+    logo.innerText = 'Pizzeria Gusto'
+    logo.setAttribute('id','logo')
 
     const nav = document.createElement('nav')
     for (let x of ['Home','Menu','Contact']) {
@@ -24,7 +25,7 @@ const createHeader = () => {
 
 // Module function to init website
 const initializeWebsite = (() => {
-    const container = document.querySelector('.fuck')
+    const container = document.querySelector('#container')
     const header = createHeader()
     console.log(container)
     container.appendChild(header)

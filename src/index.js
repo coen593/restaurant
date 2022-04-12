@@ -25,8 +25,19 @@ const createHeader = () => {
     return header
 }
 
+const getContent = () => {
+    const content = document.createElement('div')
+    content.classList.add('content-holder')
+    container.appendChild(content)
+
+    const homeContent = home.home
+    content.appendChild(homeContent)
+
+    const menuContent = menu.menu
+    content.appendChild(menuContent)
+}
+
 const setActivePage = (active) => {
-    console.log(active)
     for (let page of pageList) {
         const link = document.querySelector(`#${page.toLowerCase()}`)
         if (page.toLowerCase() === active) {
@@ -37,10 +48,21 @@ const setActivePage = (active) => {
     }
 }
 
+const handleNavLinks = () => {
+    buttons = document.querySelectorAll('nav *')
+    console.log(buttons)
+    buttons.forEach(button => {
+        console.log(button.id)
+        button.addEventListener('click', () => setActivePage(button.id))
+    })
+}
+
 // Module function to init website
 const initializeWebsite = (() => {
     const container = document.querySelector('#container')
     const header = createHeader()
     container.appendChild(header)
+    handleNavLinks()
     setActivePage('home')
+    getContent()
 })()

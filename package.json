@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/coen593/restaurant#readme",
   "devDependencies": {
+    "csv-loader": "^3.0.3",
+    "tsv-loader": "^1.0.5",
     "webpack": "^5.72.0",
     "webpack-cli": "^4.9.2"
   }

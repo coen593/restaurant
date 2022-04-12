@@ -46,13 +46,23 @@ const setActivePage = (active) => {
             link.classList.remove('active')
         }
     }
+    switch(active) {
+        case 'home':
+            console.log('x')
+            document.documentElement.style.setProperty('--X-transform-content', '0%')
+            break
+        case 'menu':
+            document.documentElement.style.setProperty('--X-transform-content', '100%')
+            break
+        case 'contact':
+            document.documentElement.style.setProperty('--X-transform-content', '200%')
+            break
+    }
 }
 
 const handleNavLinks = () => {
     buttons = document.querySelectorAll('nav *')
-    console.log(buttons)
     buttons.forEach(button => {
-        console.log(button.id)
         button.addEventListener('click', () => setActivePage(button.id))
     })
 }

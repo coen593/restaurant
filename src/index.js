@@ -35,15 +35,22 @@ const getContent = () => {
 
     const menuContent = menu.menu
     content.appendChild(menuContent)
+
+    const contactContent = contact.contact
+    content.appendChild(contactContent)
 }
 
 const setActivePage = (active) => {
     for (let page of pageList) {
         const link = document.querySelector(`#${page.toLowerCase()}`)
+        const content = document.querySelector(`.content.${page.toLowerCase()}`)
+        console.log(content)
         if (page.toLowerCase() === active) {
             link.classList.add('active')
+            content.style.display = 'grid'
         } else {
             link.classList.remove('active')
+            content.style.display = 'none'
         }
     }
     switch(active) {
@@ -73,6 +80,6 @@ const initializeWebsite = (() => {
     const header = createHeader()
     container.appendChild(header)
     handleNavLinks()
-    setActivePage('home')
     getContent()
+    setActivePage('home')
 })()

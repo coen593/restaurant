@@ -54,6 +54,12 @@ table {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     --X-transform-content: 0%;
+    overflow-x: hidden;
+    /* background-image: url('https://images.unsplash.com/photo-1630443876697-e0d2faac7b51?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; */
+
 }
 
 #container {
@@ -62,10 +68,7 @@ table {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('https://images.unsplash.com/photo-1630443876697-e0d2faac7b51?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    max-width: 100vw;
     position: relative;
 }
 
@@ -132,6 +135,8 @@ nav .nav-link.active:after {
     position: absolute;
     transform: translate(-50%,-50%);
     transition: 300ms ease-in-out;
+    left: calc(50%);
+    top: 50%;
 }
 
 /* Home content style */
@@ -139,7 +144,6 @@ nav .nav-link.active:after {
     display: flex;
     flex-direction: column;
     align-items: center;
-    top: 50%;
     left: calc(50% - var(--X-transform-content));
 }
 
@@ -158,13 +162,29 @@ nav .nav-link.active:after {
 
 /* Menu content style */
 .content.menu {
-    top: 50%;
-    left: calc(150% - var(--X-transform-content));
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
+
+.menu .pizza {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100px;
+}
+
 .content.menu h3 {
     color: white;
+    font-size: 2em;
 }
 
 .content.menu p {
     color: white;
+    text-align: center;
+}
+
+/* Contact content style */
+#map {
+    height: 300px;
+    width: 300px;
 }

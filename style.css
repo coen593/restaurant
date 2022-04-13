@@ -186,5 +186,5 @@ nav .nav-link.active:after {
 /* Contact content style */
 #map {
     height: 300px;
-    width: 300px;
+    width: 100%;
 }

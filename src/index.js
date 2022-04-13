@@ -1,3 +1,4 @@
+import {initMap} from './map.js'
 const home = require('./home.js')
 const menu = require('./menu.js')
 const contact = require('./contact.js')
@@ -38,13 +39,13 @@ const getContent = () => {
 
     const contactContent = contact.contact
     content.appendChild(contactContent)
+    initMap()
 }
 
 const setActivePage = (active) => {
     for (let page of pageList) {
         const link = document.querySelector(`#${page.toLowerCase()}`)
         const content = document.querySelector(`.content.${page.toLowerCase()}`)
-        console.log(content)
         if (page.toLowerCase() === active) {
             link.classList.add('active')
             content.style.display = 'grid'
@@ -55,7 +56,6 @@ const setActivePage = (active) => {
     }
     switch(active) {
         case 'home':
-            console.log('x')
             document.documentElement.style.setProperty('--X-transform-content', '0%')
             break
         case 'menu':
@@ -68,7 +68,7 @@ const setActivePage = (active) => {
 }
 
 const handleNavLinks = () => {
-    buttons = document.querySelectorAll('nav *')
+    const buttons = document.querySelectorAll('nav *')
     buttons.forEach(button => {
         button.addEventListener('click', () => setActivePage(button.id))
     })

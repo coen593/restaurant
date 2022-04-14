@@ -1,4 +1,4 @@
-// Initialize and add the map
+// Initialize and add the map, function as provided by Google documentation
 export function initMap() {
     // The location of Uluru
     const uluru = { lat: -25.344, lng: 131.036 };

@@ -139,6 +139,10 @@ nav .nav-link.active:after {
     top: 50%;
 }
 
+.content.home {
+    color: white;
+}
+
 /* Home content style */
 .content.home {
     display: flex;
@@ -154,10 +158,6 @@ nav .nav-link.active:after {
     margin-bottom: 40px;;
     color: white;
     font-size: 2.2em;
-}
-
-.content.home p {
-    color: white;
 }
 
 /* Menu content style */
@@ -187,4 +187,25 @@ nav .nav-link.active:after {
 #map {
     height: 300px;
     width: 100%;
+}
+
+.contact span {
+    color: white;
+}
+
+form {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+form label {
+    color: white;
+}
+
+textarea {
+    width: 200%;
+    height: 6em;
+    resize: vertical;
+    grid-column: 1 / span 2;
+    grid-row: 3 / 4;
 }

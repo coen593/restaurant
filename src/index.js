@@ -1,4 +1,6 @@
 import {initMap} from './map.js'
+import {makeNewElement} from './makeNewElement.js'
+
 const home = require('./home.js')
 const menu = require('./menu.js')
 const contact = require('./contact.js')
@@ -8,16 +10,11 @@ const pageList = ['Home','Menu','Contact']
 const createHeader = () => {
     const header = document.createElement('header')
 
-    const logo = document.createElement('h1')
-    logo.innerText = 'Pizzeria Gusto'
-    logo.setAttribute('id','logo')
+    const logo = makeNewElement('h1',[],'logo','Pizzeria Gusto')
 
     const nav = document.createElement('nav')
     for (let x of pageList) {
-        const button = document.createElement('button')
-        button.setAttribute('id',x.toLowerCase())
-        button.classList.add('nav-link')
-        button.innerText = x
+        const button = makeNewElement('button',['nav-link'],x.toLowerCase(),x)
         nav.appendChild(button)
     }
 

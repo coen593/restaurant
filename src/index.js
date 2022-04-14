@@ -9,18 +9,21 @@ const pageList = ['Home','Menu','Contact']
 
 const createHeader = () => {
     const header = document.createElement('header')
-
     const logo = makeNewElement('h1',[],'logo','Pizzeria Gusto')
-
     const nav = document.createElement('nav')
     for (let x of pageList) {
         const button = makeNewElement('button',['nav-link'],x.toLowerCase(),x)
         nav.appendChild(button)
     }
-
     header.appendChild(logo)
     header.appendChild(nav)
     return header
+}
+
+const createFooter = () => {
+    const footer = document.createElement('footer')
+    footer.innerHTML = '<p>Copyright &copy; <script>document.write(new Date().getFullYear())</script>coen593</p><a href="https://github.com/coen593" target="_blank">  <i class="fab fa-github"></i></a>'
+    return footer
 }
 
 const getContent = () => {
@@ -74,9 +77,9 @@ const handleNavLinks = () => {
 // Module function to init website
 const initializeWebsite = (() => {
     const container = document.querySelector('#container')
-    const header = createHeader()
-    container.appendChild(header)
+    container.appendChild(createHeader())
     handleNavLinks()
     getContent()
     setActivePage('home')
+    container.appendChild(createFooter())
 })()

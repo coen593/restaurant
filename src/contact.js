@@ -40,6 +40,7 @@ const form = document.createElement('form')
 form.appendChild(getFormInput('input','name','text', 'Name'))
 form.appendChild(getFormInput('input','email','email','Email address'))
 form.appendChild(getFormInput('textarea','text','textarea','Message'))
+form.appendChild(makeNewElement('button',[],'send-form','Submit',{'type': 'submit'}))
 contact.appendChild(form)
 
 

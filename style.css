@@ -229,6 +229,19 @@ form label {
     color: white;
 }
 
+form button {
+    background-color: transparent;
+    border: white 2px solid;
+    color: white;
+    border-radius: 5px;
+}
+
+form button:hover {
+    transform: scale(0.96);
+    border-color: darkblue;
+    color: darkblue;
+}
+
 input {
     width: 90%;
     border: none;
